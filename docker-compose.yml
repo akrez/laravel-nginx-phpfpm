@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8182:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./php8.2
+      args:
+        WWWGROUP: 1000
+    volumes:
+      - ./src:/var/www/html
