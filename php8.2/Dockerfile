@@ -27,4 +27,6 @@ COPY php.ini /etc/php/8.2/fpm/conf.d/99-sail.ini
 
 EXPOSE 9000
 
+COPY fpm-pool.conf /etc/php/8.2/fpm/pool.d/www.conf
+
 CMD ["php-fpm8.2", "-F"]
