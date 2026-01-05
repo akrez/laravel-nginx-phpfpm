@@ -10,6 +10,7 @@ services:
       - php
 
   php:
+    image: akrez/php-fpm:8.2.0
     build:
       context: ./php8.2
       args:
