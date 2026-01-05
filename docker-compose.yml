@@ -4,7 +4,7 @@ services:
     ports:
       - "8182:80"
     volumes:
-      - ./src:/var/www/html
+      - ./var_www_html:/var/www/html
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
@@ -16,4 +16,4 @@ services:
       args:
         WWWGROUP: 1000
     volumes:
-      - ./src:/var/www/html
+      - ./var_www_html:/var/www/html
